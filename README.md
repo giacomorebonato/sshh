@@ -1,6 +1,6 @@
 # sshh
 
-![screenshot](images/ssh.jpg)
+![screenshot](./images/sshh.jpg)
 
 ## Description
 
