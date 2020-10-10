@@ -1,6 +1,14 @@
 
 default_platform(:mac)
 
-lane :test do
-  scan(scheme: "sshh")
+platform :mac do
+  before_all do |lane|
+    if FastlaneCore::Helper.mac?
+      xcversion(version: "~> 12.0.0")
+    end
+  end
+
+  lane :test do
+    scan(scheme: "sshh")
+  end
 end

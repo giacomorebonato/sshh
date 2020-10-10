@@ -9,14 +9,16 @@
 import AMCoreAudio
 import SwiftUI
 
-class ContentViewViewModel: ObservableObject {
-    @Published var inputDevices: [AudioDevice]
+final class ContentViewViewModel: ObservableObject {
+    @Published var inputViewModels: [InputRowViewModel] = []
 
     init() {
-        self.inputDevices = AudioDevice.allInputDevices()
+        refresh()
     }
 
     func refresh() {
-        self.inputDevices = AudioDevice.allInputDevices()
+        inputViewModels = AudioDevice.allInputDevices().map {
+            InputRowViewModel(device: $0)
+        }
     }
 }

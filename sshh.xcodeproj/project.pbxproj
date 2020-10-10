@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B192B5253235B800461B99 /* QuitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B192B4253235B800461B99 /* QuitButton.swift */; };
+		21B192BA2532360500461B99 /* InputRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B192B92532360500461B99 /* InputRowViewModel.swift */; };
 		462B1AAC2531D85000412268 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1AAB2531D85000412268 /* ContentViewViewModel.swift */; };
 		462B1AB82531DA9E00412268 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1AB72531DA9E00412268 /* AppState.swift */; };
 		CA5D0147252A39CB0052A2E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D0146252A39CB0052A2E3 /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21B192B4253235B800461B99 /* QuitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButton.swift; sourceTree = "<group>"; };
+		21B192B92532360500461B99 /* InputRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputRowViewModel.swift; sourceTree = "<group>"; };
 		462B1AAB2531D85000412268 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
 		462B1AB72531DA9E00412268 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CA5D0143252A39CB0052A2E3 /* sshh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sshh.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				462B1AAB2531D85000412268 /* ContentViewViewModel.swift */,
+				21B192B92532360500461B99 /* InputRowViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			children = (
 				CA5D0148252A39CB0052A2E3 /* ContentView.swift */,
 				CA611B1A252CB966004BD126 /* InputRow.swift */,
+				21B192B4253235B800461B99 /* QuitButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -328,6 +334,8 @@
 				462B1AB82531DA9E00412268 /* AppState.swift in Sources */,
 				CA5D0147252A39CB0052A2E3 /* AppDelegate.swift in Sources */,
 				462B1AAC2531D85000412268 /* ContentViewViewModel.swift in Sources */,
+				21B192BA2532360500461B99 /* InputRowViewModel.swift in Sources */,
+				21B192B5253235B800461B99 /* QuitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
