@@ -1,26 +1,8 @@
 import AMCoreAudio
 import SwiftUI
 
-
-class ContentViewViewModel: ObservableObject {
-    @Published var inputDevices: [AudioDevice]
-    
-    init() {
-        self.inputDevices = AudioDevice.allInputDevices()
-    }
-    
-    func refresh() {
-        self.inputDevices = AudioDevice.allInputDevices()
-    }
-}
-
-
 struct ContentView: View {
     @ObservedObject var vm: ContentViewViewModel
-        
-    init() {
-        self.vm = ContentViewViewModel()
-    }
 
     var body: some View {
         VStack {
@@ -46,6 +28,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(vm: ContentViewViewModel())
     }
 }
