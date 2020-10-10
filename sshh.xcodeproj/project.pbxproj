@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462B1AAC2531D85000412268 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1AAB2531D85000412268 /* ContentViewViewModel.swift */; };
+		462B1AB82531DA9E00412268 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B1AB72531DA9E00412268 /* AppState.swift */; };
 		CA5D0147252A39CB0052A2E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D0146252A39CB0052A2E3 /* AppDelegate.swift */; };
 		CA5D0149252A39CB0052A2E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D0148252A39CB0052A2E3 /* ContentView.swift */; };
 		CA5D014B252A39CD0052A2E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA5D014A252A39CD0052A2E3 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		462B1AAB2531D85000412268 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
+		462B1AB72531DA9E00412268 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CA5D0143252A39CB0052A2E3 /* sshh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sshh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5D0146252A39CB0052A2E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA5D0148252A39CB0052A2E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462B1AAA2531D81000412268 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				462B1AAB2531D85000412268 /* ContentViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		462B1AB62531DA6F00412268 /* AppState */ = {
+			isa = PBXGroup;
+			children = (
+				462B1AB72531DA9E00412268 /* AppState.swift */,
+			);
+			path = AppState;
+			sourceTree = "<group>";
+		};
 		CA5D013A252A39CB0052A2E3 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +127,8 @@
 		CA5D0145252A39CB0052A2E3 /* sshh */ = {
 			isa = PBXGroup;
 			children = (
+				462B1AB62531DA6F00412268 /* AppState */,
+				462B1AAA2531D81000412268 /* ViewModels */,
 				CA611B16252CB93B004BD126 /* controllers */,
 				CA5D0175252A3A380052A2E3 /* components */,
 				CA5D0146252A39CB0052A2E3 /* AppDelegate.swift */,
@@ -303,7 +325,9 @@
 				CA5D0149252A39CB0052A2E3 /* ContentView.swift in Sources */,
 				CA611B1B252CB966004BD126 /* InputRow.swift in Sources */,
 				CA5D0177252A3A5A0052A2E3 /* StatusBarController.swift in Sources */,
+				462B1AB82531DA9E00412268 /* AppState.swift in Sources */,
 				CA5D0147252A39CB0052A2E3 /* AppDelegate.swift in Sources */,
+				462B1AAC2531D85000412268 /* ContentViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

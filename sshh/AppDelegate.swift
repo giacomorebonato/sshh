@@ -5,12 +5,14 @@ import AVKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+
+    let appState = AppState()
     var popover = NSPopover.init()
     var statusBar: StatusBarController?
     
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let contentView = ContentView()
+        let contentView = ContentView(vm: appState.contentViewModel)
 
         popover.contentSize = NSSize(width: 440, height: 360)
         popover.contentViewController = NSHostingController(rootView: contentView)
