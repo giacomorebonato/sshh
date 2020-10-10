@@ -1,0 +1,6 @@
+
+default_platform(:mac)
+
+lane :test do
+  scan(scheme: "sshh")
+end
