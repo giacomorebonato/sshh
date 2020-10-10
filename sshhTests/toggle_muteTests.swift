@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import toggle_mute
+@testable import sshh
 
 class toggle_muteTests: XCTestCase {
 

@@ -1,0 +1,23 @@
+# OSX
+.DS_Store
+
+# Xcode build generated files
+build/
+DerivedData/
+Index/
+xcuserdata/
+Package.resolved
+sshh.app
+sshh.app.dSYM.zip
+
+# Workspace specific generated files
+
+# Fastlane specific files
+fastlane/report.xml
+fastlane/test_output/
+
+# Bundler specific files
+vendor/
+
+# SwiftLint files
+**/swiftlint.txt

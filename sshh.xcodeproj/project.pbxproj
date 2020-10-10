@@ -86,7 +86,6 @@
 		CA5D013A252A39CB0052A2E3 = {
 			isa = PBXGroup;
 			children = (
-				CAB87A6A252F3CC1006C355E /* assets */,
 				CA94C127252B7DDD001D28A4 /* README.md */,
 				CA5D0145252A39CB0052A2E3 /* sshh */,
 				CA5D015B252A39CD0052A2E3 /* sshhTests */,
@@ -161,13 +160,6 @@
 				CA5D0176252A3A5A0052A2E3 /* StatusBarController.swift */,
 			);
 			path = controllers;
-			sourceTree = "<group>";
-		};
-		CAB87A6A252F3CC1006C355E /* assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
