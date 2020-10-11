@@ -1,21 +1,16 @@
-import AMCoreAudio
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var vm: ContentViewViewModel
+    @EnvironmentObject var vm: ContentViewViewModel
 
     var body: some View {
         VStack {
-            ForEach(vm.inputDevices, id: \.id) {
-                device in InputRow(device: device, refresh: self.vm.refresh)
+            ForEach(0..<vm.inputViewModels.count, id: \.self) { index in
+                InputRow(vm: $vm.inputViewModels[index])
             }
             Divider()
             HStack {
-                Button(action: {
-                    exit(0)
-                }) {
-                    Text("Quit")
-                }
+                QuitButton()
             }
         }
         .padding(.top, 12)
@@ -25,9 +20,9 @@ struct ContentView: View {
     }
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(vm: ContentViewViewModel())
+        ContentView()
+            .environmentObject(ContentViewViewModel())
     }
 }
