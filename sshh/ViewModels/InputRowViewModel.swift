@@ -11,43 +11,49 @@ import AMCoreAudio
 
 final class InputRowViewModel: ObservableObject, Identifiable {
 
-    var id = UUID()
-    var device: AudioDevice
-    var deviceName: String {
-        device.name
-    }
-    var lastVolumeLevel: Float32 = 0
-
-    @Published var volume: Float32 = 0 {
+    @Published var device: AudioDevice
+    @Published var isDefaultDevice = false {
         didSet {
-            device.setVolume(volume, channel: 0, direction: .recording)
+            if isDefaultDevice {
+                setDeviceAsDefault()
+            }
         }
     }
-
     @Published var isMuted: Bool = false {
         didSet {
             self.toggleMute()
         }
     }
+    @Published var volume: Float32 = 0 {
+        didSet {
+            device.setVolume(volume, channel: 0, direction: direction)
+        }
+    }
+
+    let id = UUID()
+    var deviceName: String {
+        device.name
+    }
+    private var lastVolumeLevel: Float32 = 0
+    private var direction: Direction
 
     init(device: AudioDevice) {
-        let volumeInfo = device.volumeInfo(channel: 0, direction: .recording)
+        let direction: Direction = device.isOutputOnlyDevice() ? .recording : .playback
+        let volumeInfo = device.volumeInfo(channel: 0, direction: direction)
+        self.direction = direction
 
+        self.isDefaultDevice = AudioDevice.defaultInputDevice()?.id == device.id
         self.device = device
-        self.isMuted = (device.isMuted(channel: 0, direction: .recording)) ?? false
+        self.isMuted = (device.isMuted(channel: 0, direction: direction)) ?? false
         self.volume = volumeInfo?.volume ?? self.lastVolumeLevel
 
         print("Volume is " + String(self.volume))
     }
 
     func toggleMute() {
-        let isMuted = self.device.isMuted(channel: 0, direction: .recording) ?? false
-        self.lastVolumeLevel = self.device.volumeInfo(channel: 0, direction: .recording)?.volume ?? 0
-        self.device.setMute(!isMuted, channel: 0, direction: .recording)
-    }
-
-    var isDefaultDevice: Bool {
-        AudioDevice.defaultInputDevice()?.id == self.device.id
+        let isMuted = self.device.isMuted(channel: 0, direction: direction) ?? false
+        self.lastVolumeLevel = self.device.volumeInfo(channel: 0, direction: direction)?.volume ?? 0
+        self.device.setMute(!isMuted, channel: 0, direction: direction)
     }
 
     func setDeviceAsDefault() {

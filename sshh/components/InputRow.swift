@@ -2,6 +2,7 @@ import SwiftUI
 
 struct InputRow: View {
     @Binding var vm: InputRowViewModel
+    @EnvironmentObject var content: ContentViewViewModel
 
     var body: some View {
         VStack {
@@ -19,7 +20,8 @@ struct InputRow: View {
                     Text("Mute")
                 }
                 Button(action: {
-                    vm.setDeviceAsDefault()
+                    vm.isDefaultDevice = true
+                    content.reload()
                 }) {
                     Text("Default")
                 }

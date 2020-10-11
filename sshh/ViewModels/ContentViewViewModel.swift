@@ -13,10 +13,10 @@ final class ContentViewViewModel: ObservableObject {
     @Published var inputViewModels: [InputRowViewModel] = []
 
     init() {
-        refresh()
+        reload()
     }
 
-    func refresh() {
+    func reload() {
         inputViewModels = AudioDevice.allInputDevices().map {
             InputRowViewModel(device: $0)
         }

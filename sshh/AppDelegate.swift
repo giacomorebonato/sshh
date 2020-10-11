@@ -12,7 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let contentView = ContentView(vm: appState.contentViewModel)
+        let contentView = ContentView().environmentObject(appState.contentViewModel)
 
         popover.contentSize = NSSize(width: 440, height: 360)
         popover.contentViewController = NSHostingController(rootView: contentView)

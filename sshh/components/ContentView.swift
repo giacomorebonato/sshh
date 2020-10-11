@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var vm: ContentViewViewModel
+    @EnvironmentObject var vm: ContentViewViewModel
 
     var body: some View {
         VStack {
             ForEach(0..<vm.inputViewModels.count, id: \.self) { index in
-                InputRow(vm: self.$vm.inputViewModels[index])
+                InputRow(vm: $vm.inputViewModels[index])
             }
             Divider()
             HStack {
@@ -22,6 +22,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(vm: ContentViewViewModel())
+        ContentView()
+            .environmentObject(ContentViewViewModel())
     }
 }
