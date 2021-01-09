@@ -17,8 +17,10 @@ final class ContentViewViewModel: ObservableObject {
     }
 
     func reload() {
-        inputViewModels = AudioDevice.allInputDevices().map {
-            InputRowViewModel(device: $0)
+        inputViewModels = AudioDevice.allDevices()
+            .filter { $0.isAlive() }
+            .map {
+                InputRowViewModel(device: $0)
         }
     }
 }
